@@ -1,0 +1,16 @@
+# Prompt registry. Paths are relative to the prompts/ directory.
+
+scalar:
+  zero_shot:  scalar_zeroshot.txt
+  icl3:       scalar_icl3.txt
+  cot:        scalar_cot.txt
+
+verifier:
+  evidence_grounding: verifier_evidence_grounding.txt
+
+audit:
+  visualizability: visualizability_audit.txt
+
+# ICL exemplar pool (relative to data_root). Three examples are sampled with
+# fixed seed (configs/paths.yaml:seed) per request.
+icl_exemplar_pool: splits/icl_exemplars.jsonl

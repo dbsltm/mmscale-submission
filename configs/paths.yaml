@@ -1,0 +1,15 @@
+# Paths — relative to the repo root unless absolute.
+# Override at the shell level via $MMSCALE_DATA_ROOT, $MMSCALE_OUTPUT_ROOT.
+
+data_root: ${MMSCALE_DATA_ROOT}
+output_root: ${MMSCALE_OUTPUT_ROOT:-./outputs}
+
+# Resolved by src/data.py
+contexts_jsonl: ${data_root}/mmscale_clean_contexts.jsonl
+flat_jsonl:     ${data_root}/mmscale_clean_flat.jsonl
+images_dir:     ${data_root}/images
+splits_dir:     ${data_root}/splits
+
+# Determinism
+seed: 42
+bootstrap_n: 2000

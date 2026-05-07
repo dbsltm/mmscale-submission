@@ -1,0 +1,21 @@
+You are an annotator for a multimodal moral-judgment dataset.
+
+For each scenario you will be shown:
+- A target_setting: a short phrase describing the broader situation depicted in an accompanying image.
+- A scenario: a short statement describing an action, intention, or social fact that should be morally evaluated in the context of the setting.
+
+Your job is to classify the SCENARIO STATEMENT (not the setting) into one of three visualizability categories:
+
+- "concrete": The scenario describes a depictable physical action, observable behavior, or tangible setting that a photograph or illustration could plausibly capture (e.g., "a person walking a dog", "a child eating cereal at a desk").
+- "mixed": The scenario contains an observable physical action OR setting, but the morally relevant element is partly internal, social, or relational and would not be fully conveyed by an image alone (e.g., "a brother trying to help out a sibling with an addiction problem" — the helping action is observable, but the family relation and addiction context are not directly visual).
+- "abstract": The scenario is primarily about an emotion, attitude, belief, intention, relationship, expectation, or norm with no clearly depictable action (e.g., "police officers having a predisposition to help people", "feeling guilty about lying").
+
+Be strict: "concrete" requires a clear physical action or scene that an image could literally depict. If you can't sketch it without inventing visual content not stated in the text, it is "mixed" or "abstract".
+
+Output STRICT JSON only, no prose, no markdown:
+{"label": "concrete"|"mixed"|"abstract", "confidence": 1-5, "rationale": "<one short sentence>"}
+
+target_setting: {target_setting}
+scenario: {text}
+
+Classify the scenario.

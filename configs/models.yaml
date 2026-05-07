@@ -1,0 +1,30 @@
+# Model registry. `type` selects the inference backend in src/run_model.py.
+# `hf_path` is the HuggingFace identifier for open-weight models served via vLLM.
+# `api_model` is the provider-side model name for closed-source models.
+
+models:
+
+  # ---- Open-weight (vLLM) ----
+  llava_onevision_7b:
+    type: vllm
+    hf_path: llava-hf/llava-onevision-qwen2-7b-ov-hf
+  qwen2_vl_7b:
+    type: vllm
+    hf_path: Qwen/Qwen2-VL-7B-Instruct
+  qwen2_5_vl_7b:
+    type: vllm
+    hf_path: Qwen/Qwen2.5-VL-7B-Instruct
+  qwen3_vl_8b:
+    type: vllm
+    hf_path: Qwen/Qwen3-VL-8B-Instruct
+
+  # ---- Proprietary (API) ----
+  gpt5_2:
+    type: openai
+    api_model: gpt-5.2
+  claude_opus_4_7:
+    type: anthropic
+    api_model: claude-opus-4-7
+  gemini_2_5_pro:
+    type: gemini
+    api_model: gemini-2.5-pro

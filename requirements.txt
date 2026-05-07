@@ -1,0 +1,22 @@
+# Core
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+pyyaml>=6.0
+tqdm>=4.66
+pillow>=10.0
+matplotlib>=3.7
+
+# Inference (open-weight)
+torch>=2.1
+transformers>=4.45
+accelerate>=0.33
+# vllm>=0.6  # uncomment to run open-weight evals via vLLM
+
+# Inference (proprietary, optional)
+openai>=2.0
+anthropic>=0.40
+google-genai>=0.3
+
+# Eval
+scikit-learn>=1.3
